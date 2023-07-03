@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flightmanagementdatabase
+  labels:
+    app: flightmanagement
+    type: api
+spec:
+  containers:
+    - name: database
+      image: abhishekbhilare/flightmanagment:version1.0.f-database
+      ports:
+        - containerPort: 3306
+          hostPort: 3306
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root

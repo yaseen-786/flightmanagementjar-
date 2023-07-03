@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flightmanagementamin
+  labels:
+    app: flightmanagement
+    type: frontend-admin
+    service: api
+    
+spec:
+
+  containers:
+    - name: ct-admin
+      image: abhishekbhilare/flightmanagment:version1.0.f-ctadmin
+      ports:
+        - containerPort: 80
+      env:
+        - name: API_URL
+          value: http://localhost:8081

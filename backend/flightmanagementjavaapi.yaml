@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flightmanagementjavapai
+  labels:
+    app: flightmanagement
+    type: api
+    service: api
+spec:
+
+  containers:
+    - name: java-api
+      image: abhishekbhilare/flightmanagment:version1.0.f-javapp
+      ports:
+        - containerPort: 8081
+          # hostPort: 7071
+      env:
+        - name: MYSQL_HOST
+          value: 10.1.0.75
